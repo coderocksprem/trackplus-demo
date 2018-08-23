@@ -1,0 +1,29 @@
+<h1>Jobs List</h1>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">S.N.</th>
+        <th scope="col">Driver Key</th>
+        <th scope="col">Truck ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Start Date Time</th>
+        <th scope="col">Start Location</th>
+        <th scope="col">End Date Time</th>
+        <th scope="col">End Loction</th>
+        <th scope="col">OdometerReading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs; let i = index">
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ job.driverKey }}</td>
+        <td>{{ job.truckID }}</td>
+        <td>{{ job.status }}</td> 
+        <td>{{ job.startDateTime.seconds | date:"HH:mm" }}</td>
+        <td>Lat.: {{ job.startLocation.latitude }} , Long.: {{ job.startLocation.longitude }}</td>
+        <td>{{ job.endDateTime.seconds | date:"HH:mm" }}</td>
+        <td>Lat.: {{ job.endLocation.latitude }} , Long.: {{ job.endLocation.longitude }}</td>
+        <td>{{ job.odometerReading }}</td>
+      </tr>
+    </tbody>
+  </table>
